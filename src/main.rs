@@ -17,6 +17,7 @@ fn problem_2(ceil: u32) {
     let mut y:      u32 = 2;
     let mut tmp:    u32;
     let mut sum = 0;
+
     while x < ceil && y < ceil {
         if y % 2 == 0 {
             sum += y;
@@ -81,9 +82,28 @@ fn problem_4() {
     println!("{}", largest_palindrome);
 }
 
+// Smallest multiple
+fn problem_5(max_div: u32) {
+    let mut multiple = max_div;
+    let mut not_smallest_multiple;
+    while {
+        not_smallest_multiple = false;
+        for div in 2..=max_div {
+            if multiple % div != 0 {
+                not_smallest_multiple = true;
+                multiple += max_div;
+                break;
+            }
+        }
+        not_smallest_multiple
+    } {}
+    println!("{}", multiple);
+}
+
 fn main() {
     problem_1(1000);
     problem_2(4000000);
     problem_3(600851475143);
     problem_4();
+    problem_5(20);
 }
