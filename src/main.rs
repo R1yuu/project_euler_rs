@@ -100,10 +100,24 @@ fn problem_5(max_div: u32) {
     println!("{}", multiple);
 }
 
+// Sum square difference
+fn problem_6(ceil: u64) {
+    let mut sum_of_squares: u64 = 1;
+    let mut square_of_sum: u64 = 1;
+
+    for curr in 2..=ceil {
+        sum_of_squares = sum_of_squares + curr * curr;
+        square_of_sum += curr;
+    }
+    square_of_sum *= square_of_sum;
+    println!("{}", square_of_sum - sum_of_squares);
+}
+
 fn main() {
     problem_1(1000);
     problem_2(4000000);
     problem_3(600851475143);
     problem_4();
     problem_5(20);
+    problem_6(100);
 }
